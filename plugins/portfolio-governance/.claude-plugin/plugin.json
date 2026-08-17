@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-governance",
+  "version": "0.2.0",
+  "description": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidencia.",
+  "author": {
+    "name": "Vladimir Acuña"
+  },
+  "homepage": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT"
+}

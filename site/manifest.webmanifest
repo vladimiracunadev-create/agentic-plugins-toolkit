@@ -1,0 +1,8 @@
+{
+  "name": "Agentic Plugins Toolkit",
+  "short_name": "Agentic Plugins",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e0c1a",
+  "theme_color": "#18152d"
+}

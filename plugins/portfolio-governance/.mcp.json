@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "portfolio-governance-control": {
+      "command": "agentic-plugins",
+      "args": [
+        "mcp",
+        "--plugin",
+        "portfolio-governance"
+      ]
+    }
+  }
+}

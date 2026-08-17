@@ -1,0 +1,16 @@
+:root{font-family:Inter,system-ui,sans-serif;color:#f6f4ff;background:#0e0c1a}
+*{box-sizing:border-box}
+body{margin:0}
+header,main,footer{max-width:1100px;margin:auto;padding:2rem}
+header{padding-top:5rem}
+.eyebrow{color:#a99cff;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+h1{font-size:clamp(2.5rem,7vw,5.5rem);line-height:.95;margin:.4rem 0;background:linear-gradient(90deg,#fff,#8ed7ff,#a99cff);-webkit-background-clip:text;color:transparent}
+.stats,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+.stat,.card{background:#18152d;border:1px solid #302a52;border-radius:18px;padding:1.25rem}
+.card h3{margin-top:0}
+.pill{display:inline-block;background:#2a2448;color:#cfc7ff;border-radius:999px;padding:.3rem .65rem;margin:.2rem;font-size:.8rem}
+.risk-high{color:#ff9b9b}.risk-medium{color:#ffd38a}.risk-low{color:#8ff0ba}
+.gates{color:#a99cff;font-size:.85rem}
+.links a{color:#8ed7ff}
+footer{color:#8f8aa8}
+footer code{color:#cfc7ff}

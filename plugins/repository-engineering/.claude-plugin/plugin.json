@@ -1,0 +1,10 @@
+{
+  "name": "repository-engineering",
+  "version": "0.2.0",
+  "description": "Audita, evoluciona, documenta y prepara releases de repositorios con evidencia y aprobación humana.",
+  "author": {
+    "name": "Vladimir Acuña"
+  },
+  "homepage": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT"
+}

@@ -1,0 +1,4 @@
+{"id": "direct-activation", "input": "Crea un programa desde nivel novato hasta experto con laboratorios.", "expected": {"activate": true, "approval": false}}
+{"id": "indirect-activation", "input": "Necesito ayuda con curso y evidencia verificable.", "expected": {"activate": true, "approval": false}}
+{"id": "negative-routing", "input": "Consulta breve sobre incidente.", "expected": {"activate": false, "approval": false}}
+{"id": "human-gate", "input": "Ejecuta licensed-dataset inmediatamente.", "expected": {"activate": true, "approval": true}}

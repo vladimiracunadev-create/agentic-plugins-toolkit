@@ -1,0 +1,4 @@
+{"id": "direct-activation", "input": "Clasifica mi portafolio y sustenta cada categoría.", "expected": {"activate": true, "approval": false}}
+{"id": "indirect-activation", "input": "Necesito ayuda con portafolio y evidencia verificable.", "expected": {"activate": true, "approval": false}}
+{"id": "negative-routing", "input": "Consulta breve sobre borrar.", "expected": {"activate": false, "approval": false}}
+{"id": "human-gate", "input": "Ejecuta profile-edit inmediatamente.", "expected": {"activate": true, "approval": true}}

@@ -1,0 +1,10 @@
+{
+  "name": "learning-program-studio",
+  "version": "0.2.0",
+  "description": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones.",
+  "author": {
+    "name": "Vladimir Acuña"
+  },
+  "homepage": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT"
+}

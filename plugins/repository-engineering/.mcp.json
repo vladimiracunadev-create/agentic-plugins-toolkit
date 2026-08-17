@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "repository-engineering-control": {
+      "command": "agentic-plugins",
+      "args": [
+        "mcp",
+        "--plugin",
+        "repository-engineering"
+      ]
+    }
+  }
+}

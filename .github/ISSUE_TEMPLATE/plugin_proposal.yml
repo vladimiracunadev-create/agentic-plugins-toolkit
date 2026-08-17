@@ -1,0 +1,61 @@
+name: Propuesta de plugin
+description: Propone un plugin nuevo para el catálogo
+title: "[Plugin]: "
+labels: ["plugin", "propuesta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Un plugin es la **unidad de composición, instalación y distribución**
+        alrededor de una misión reconocible. No es un agente (esos viven en
+        `operational-ai-agents`) ni una capacidad suelta (esas viven en
+        `claude-skills-toolkit`). Lee `CONTRIBUTING.md` antes de continuar.
+  - type: input
+    id: plugin-id
+    attributes:
+      label: Identificador propuesto
+      description: En kebab-case, por ejemplo `data-platform-governance`.
+      placeholder: mi-plugin
+    validations:
+      required: true
+  - type: textarea
+    id: mission
+    attributes:
+      label: Misión
+      description: El resultado integral que el plugin compone.
+    validations:
+      required: true
+  - type: textarea
+    id: composition
+    attributes:
+      label: Qué compone
+      description: Agentes de la instantánea, skills, servidores MCP y hooks.
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: Solapamiento con el catálogo actual
+      description: Por qué ninguno de los seis plugins existentes cubre esta misión.
+    validations:
+      required: true
+  - type: textarea
+    id: approvals
+    attributes:
+      label: Política
+      description: Acciones permitidas, acciones con gate humano y acciones denegadas siempre.
+    validations:
+      required: true
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Criterios de aceptación
+      options:
+        - label: Reutiliza agentes de la instantánea en vez de inventar agentes nuevos aquí.
+          required: true
+        - label: Declara al menos cuatro evaluaciones que prueben propiedades distintas.
+          required: true
+        - label: Todo archivo del paquete se genera desde el catálogo; no añado vistas a mano.
+          required: true
+        - label: Declararé el estado honesto `IMPLEMENTED`, sin afirmar uso productivo.
+          required: true

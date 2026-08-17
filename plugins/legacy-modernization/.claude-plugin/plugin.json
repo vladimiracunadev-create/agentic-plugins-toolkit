@@ -1,0 +1,10 @@
+{
+  "name": "legacy-modernization",
+  "version": "0.2.0",
+  "description": "Planifica y ejecuta modernizaciones incrementales preservando contratos, continuidad y rollback.",
+  "author": {
+    "name": "Vladimir Acuña"
+  },
+  "homepage": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT"
+}

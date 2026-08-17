@@ -1,0 +1,215 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONIOENCODING: utf-8
+  PYTHONUTF8: "1"
+
+jobs:
+  # ─────────────────────────────────────────────────────────────
+  # 1. Estilo y estática. Barato y rápido: falla antes que el resto.
+  # ─────────────────────────────────────────────────────────────
+  lint:
+    name: Lint · ruff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar ruff
+        run: python -m pip install --upgrade "ruff>=0.13"
+      - name: Analizar código
+        run: ruff check --output-format=github .
+      - name: Comprobar que el Makefile documentado es válido
+        run: |
+          make help
+          make -n check
+
+  # ─────────────────────────────────────────────────────────────
+  # 2. Fuente de verdad: el catálogo manda sobre las vistas generadas.
+  # ─────────────────────────────────────────────────────────────
+  contracts:
+    name: Contratos · sync + validate + eval
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar
+        run: python -m pip install .
+      - name: Sin drift respecto del catálogo
+        run: agentic-plugins sync --check
+      - name: Integridad de los paquetes
+        run: agentic-plugins validate
+      - name: Evaluaciones deterministas
+        run: agentic-plugins eval --all
+      - name: Resumen del catálogo
+        run: |
+          {
+            echo "### Catálogo verificado"
+            echo ""
+            echo '```'
+            agentic-plugins list
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # ─────────────────────────────────────────────────────────────
+  # 3. Pruebas en las nueve combinaciones soportadas.
+  # ─────────────────────────────────────────────────────────────
+  test:
+    name: Test · ${{ matrix.os }} · py${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Instalar
+        run: python -m pip install .
+      # Pasos separados a propósito: en Windows un `run` multilínea usa
+      # PowerShell y solo propaga el código de salida del último comando.
+      - name: Sin drift respecto del catálogo
+        run: agentic-plugins sync --check
+      - name: Integridad de los paquetes
+        run: agentic-plugins validate
+      - name: Evaluaciones deterministas
+        run: agentic-plugins eval --all
+      - name: El hook resuelve sin depender de python3
+        run: agentic-plugins-hook --plugin repository-engineering --event SessionStart
+      - name: Pruebas unitarias
+        run: python -m unittest discover -s tests -v
+
+  # ─────────────────────────────────────────────────────────────
+  # 4. Los paquetes distribuibles se construyen y son reproducibles.
+  # ─────────────────────────────────────────────────────────────
+  packages:
+    name: Paquetes · ZIP reproducibles
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar
+        run: python -m pip install .
+      - name: Construir dos veces y comparar los SHA-256
+        run: |
+          agentic-plugins package --all --output build-a
+          agentic-plugins package --all --output build-b
+          diff build-a/checksums.json build-b/checksums.json
+          echo "Los seis paquetes son byte a byte idénticos entre construcciones."
+      - name: Resumen de checksums
+        run: |
+          {
+            echo "### Paquetes reproducibles"
+            echo ""
+            echo '```json'
+            cat build-a/checksums.json
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: plugins
+          path: build-a/
+          retention-days: 14
+
+  # ─────────────────────────────────────────────────────────────
+  # 5. El paquete Python se construye e instala desde cero.
+  # ─────────────────────────────────────────────────────────────
+  build:
+    name: Build · wheel + sdist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Construir distribuciones
+        run: |
+          python -m pip install --upgrade build twine
+          python -m build
+      - name: Validar metadatos
+        run: python -m twine check dist/*
+      - name: Instalar desde el wheel en un entorno limpio
+        run: |
+          python -m venv /tmp/clean
+          /tmp/clean/bin/python -m pip install dist/*.whl
+          /tmp/clean/bin/agentic-plugins --root "$PWD" list
+          /tmp/clean/bin/agentic-plugins --root "$PWD" validate
+          /tmp/clean/bin/agentic-plugins --root "$PWD" doctor
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: distribuciones
+          path: dist/
+          retention-days: 14
+
+  # ─────────────────────────────────────────────────────────────
+  # 6. La imagen construye y el panel responde de verdad.
+  # ─────────────────────────────────────────────────────────────
+  docker:
+    name: Docker · build + healthcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Construir imagen
+        run: docker build -t agentic-plugins-toolkit:ci .
+      - name: Arrancar el control center
+        run: docker run -d --name cc -p 127.0.0.1:8787:8787 agentic-plugins-toolkit:ci
+      - name: Esperar healthz
+        run: |
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8787/healthz > /dev/null; then
+              echo "Control center respondió en el intento $attempt"
+              curl -fsS http://127.0.0.1:8787/api/plugins | head -c 200
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "El control center no respondió"
+          docker logs cc
+          exit 1
+      - name: Detener
+        if: always()
+        run: docker rm -f cc || true
+
+  # ─────────────────────────────────────────────────────────────
+  # 7. Un único check agregado para proteger la rama.
+  # ─────────────────────────────────────────────────────────────
+  ci:
+    name: CI verde
+    runs-on: ubuntu-latest
+    needs: [lint, contracts, test, packages, build, docker]
+    if: always()
+    steps:
+      - name: Verificar que ningún job falló
+        run: |
+          if echo '${{ join(needs.*.result, ' ') }}' | grep -qE 'failure|cancelled'; then
+            echo "Resultados: ${{ join(needs.*.result, ', ') }}"
+            exit 1
+          fi
+          echo "Todos los jobs en verde: ${{ join(needs.*.result, ', ') }}"

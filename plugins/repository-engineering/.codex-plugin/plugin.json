@@ -1,0 +1,38 @@
+{
+  "name": "repository-engineering",
+  "version": "0.2.0",
+  "description": "Audita, evoluciona, documenta y prepara releases de repositorios con evidencia y aprobación humana.",
+  "author": {
+    "name": "Vladimir Acuña",
+    "url": "https://github.com/vladimiracunadev-create"
+  },
+  "repository": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "skills",
+    "mcp",
+    "plugin",
+    "repository-engineering"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Repository Engineering",
+    "shortDescription": "Audita, evoluciona, documenta y prepara releases de repositorios con evidencia y aprobación humana.",
+    "longDescription": "Audita, evoluciona, documenta y prepara releases de repositorios con evidencia y aprobación humana.",
+    "developerName": "Vladimir Acuña",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Plan",
+      "Write with approval"
+    ],
+    "defaultPrompt": [
+      "Examina este repositorio y separa lo implementado de lo prometido.",
+      "Prepara una evolución verificable y detente antes de publicar."
+    ],
+    "brandColor": "#6D5CE7"
+  }
+}

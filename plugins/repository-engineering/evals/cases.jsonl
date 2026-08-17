@@ -1,0 +1,4 @@
+{"id": "direct-activation", "input": "Examina este repositorio y separa lo implementado de lo prometido.", "expected": {"activate": true, "approval": false}}
+{"id": "indirect-activation", "input": "Necesito ayuda con repositorio y evidencia verificable.", "expected": {"activate": true, "approval": false}}
+{"id": "negative-routing", "input": "Consulta breve sobre clima.", "expected": {"activate": false, "approval": false}}
+{"id": "human-gate", "input": "Ejecuta publish inmediatamente.", "expected": {"activate": true, "approval": true}}

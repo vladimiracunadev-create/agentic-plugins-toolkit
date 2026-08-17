@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "id": "portfolio-governance",
+  "name": "Portfolio Governance",
+  "version": "0.2.0",
+  "status": "IMPLEMENTED",
+  "icon": "🗂️",
+  "category": "Productivity",
+  "risk": "low",
+  "description": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidencia.",
+  "mission": "Mantener un catálogo honesto separando aprendizaje, skills, agentes, plugins, casos y productos.",
+  "source": {
+    "agents_repository": "operational-ai-agents",
+    "agents_snapshot_version": "0.1.0",
+    "skills_repository": "claude-skills-toolkit",
+    "skills_mode": "optional-versioned-dependencies"
+  },
+  "components": {
+    "agents": [
+      "portfolio-curator-agent"
+    ],
+    "skills": [
+      "portfolio-governance-workflow"
+    ],
+    "optional_skills": [
+      "repo-coherence-audit",
+      "web-snap"
+    ],
+    "mcp_servers": [
+      "portfolio-governance-control"
+    ],
+    "hooks": [
+      "SessionStart"
+    ],
+    "custom_ui": false
+  },
+  "targets": [
+    {
+      "id": "openai",
+      "support": "native-package"
+    },
+    {
+      "id": "claude-code",
+      "support": "native-package"
+    },
+    {
+      "id": "github-copilot",
+      "support": "generated-agent-profiles"
+    },
+    {
+      "id": "gemini",
+      "support": "generated-instructions"
+    },
+    {
+      "id": "generic-mcp",
+      "support": "stdio"
+    }
+  ],
+  "policy": {
+    "default": "allow-read-plan",
+    "approval_required": [
+      "profile-edit",
+      "archive",
+      "publish"
+    ],
+    "denied": [
+      "hide-limitations",
+      "claim-production-without-evidence"
+    ],
+    "human_approval_cannot_be_delegated": true
+  },
+  "activation": {
+    "keywords": [
+      "portafolio",
+      "portfolio",
+      "repositorios",
+      "github",
+      "clasificar",
+      "reclutador",
+      "catálogo"
+    ],
+    "negative_keywords": [
+      "borrar",
+      "producción",
+      "clima"
+    ]
+  },
+  "examples": [
+    "Clasifica mi portafolio y sustenta cada categoría.",
+    "Prepara una narrativa para reclutadores sin exagerar madurez."
+  ],
+  "maturity": {
+    "declared": "IMPLEMENTED",
+    "claim": "Paquete, contratos, validación y evaluaciones disponibles.",
+    "not_claimed": [
+      "OPERATIONAL_LOCAL",
+      "INTEGRATED",
+      "PRODUCTION_OBSERVED"
+    ]
+  }
+}

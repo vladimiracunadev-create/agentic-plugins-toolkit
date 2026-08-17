@@ -1,0 +1,28 @@
+{
+  "plugin": "learning-program-studio",
+  "version": "0.2.0",
+  "generated_from": {
+    "plugin_catalog": "catalog/plugins.yaml",
+    "agent_snapshot": "catalog/agents.snapshot.json",
+    "agent_repository": "operational-ai-agents",
+    "agent_repository_version": "0.1.0"
+  },
+  "optional_skill_source": {
+    "repository": "claude-skills-toolkit",
+    "mode": "optional-versioned-dependencies",
+    "skills": [
+      "md-lint-fix",
+      "md-to-doc",
+      "repo-coherence-audit",
+      "yaml-control"
+    ]
+  },
+  "generated_files_are_distribution_views": true,
+  "production_claim": false,
+  "declared_maturity": "IMPLEMENTED",
+  "not_claimed": [
+    "OPERATIONAL_LOCAL",
+    "INTEGRATED",
+    "PRODUCTION_OBSERVED"
+  ]
+}

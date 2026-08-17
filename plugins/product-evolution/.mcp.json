@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "product-evolution-control": {
+      "command": "agentic-plugins",
+      "args": [
+        "mcp",
+        "--plugin",
+        "product-evolution"
+      ]
+    }
+  }
+}

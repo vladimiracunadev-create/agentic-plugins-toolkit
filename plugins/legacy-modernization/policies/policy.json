@@ -1,0 +1,15 @@
+{
+  "default": "allow-read-plan",
+  "approval_required": [
+    "data-migration",
+    "cutover",
+    "remove-dependency",
+    "production",
+    "contract-break"
+  ],
+  "denied": [
+    "big-bang-without-rollback",
+    "bypass-approval"
+  ],
+  "human_approval_cannot_be_delegated": true
+}

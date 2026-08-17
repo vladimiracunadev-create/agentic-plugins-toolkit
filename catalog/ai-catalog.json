@@ -1,0 +1,154 @@
+{
+  "schema_version": "experimental-2026",
+  "status": "ARD_READY_NOT_CONFORMANCE_CLAIM",
+  "publisher": {
+    "name": "Vladimir Acuña",
+    "url": "https://github.com/vladimiracunadev-create"
+  },
+  "resources": [
+    {
+      "id": "urn:agentic-plugin:repository-engineering:0.2.0",
+      "type": "plugin",
+      "name": "Repository Engineering",
+      "description": "Audita, evoluciona, documenta y prepara releases de repositorios con evidencia y aprobación humana.",
+      "version": "0.2.0",
+      "interfaces": [
+        {
+          "protocol": "mcp",
+          "transport": "stdio"
+        },
+        {
+          "protocol": "plugin-package",
+          "targets": [
+            "openai",
+            "claude-code",
+            "github-copilot",
+            "gemini",
+            "generic-mcp"
+          ]
+        }
+      ],
+      "path": "../plugins/repository-engineering"
+    },
+    {
+      "id": "urn:agentic-plugin:legacy-modernization:0.2.0",
+      "type": "plugin",
+      "name": "Legacy Modernization",
+      "description": "Planifica y ejecuta modernizaciones incrementales preservando contratos, continuidad y rollback.",
+      "version": "0.2.0",
+      "interfaces": [
+        {
+          "protocol": "mcp",
+          "transport": "stdio"
+        },
+        {
+          "protocol": "plugin-package",
+          "targets": [
+            "openai",
+            "claude-code",
+            "github-copilot",
+            "gemini",
+            "generic-mcp"
+          ]
+        }
+      ],
+      "path": "../plugins/legacy-modernization"
+    },
+    {
+      "id": "urn:agentic-plugin:learning-program-studio:0.2.0",
+      "type": "plugin",
+      "name": "Learning Program Studio",
+      "description": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones.",
+      "version": "0.2.0",
+      "interfaces": [
+        {
+          "protocol": "mcp",
+          "transport": "stdio"
+        },
+        {
+          "protocol": "plugin-package",
+          "targets": [
+            "openai",
+            "claude-code",
+            "github-copilot",
+            "gemini",
+            "generic-mcp"
+          ]
+        }
+      ],
+      "path": "../plugins/learning-program-studio"
+    },
+    {
+      "id": "urn:agentic-plugin:product-evolution:0.2.0",
+      "type": "plugin",
+      "name": "Product Evolution",
+      "description": "Convierte productos parciales en incrementos priorizados, compatibles y verificables.",
+      "version": "0.2.0",
+      "interfaces": [
+        {
+          "protocol": "mcp",
+          "transport": "stdio"
+        },
+        {
+          "protocol": "plugin-package",
+          "targets": [
+            "openai",
+            "claude-code",
+            "github-copilot",
+            "gemini",
+            "generic-mcp"
+          ]
+        }
+      ],
+      "path": "../plugins/product-evolution"
+    },
+    {
+      "id": "urn:agentic-plugin:portfolio-governance:0.2.0",
+      "type": "plugin",
+      "name": "Portfolio Governance",
+      "description": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidencia.",
+      "version": "0.2.0",
+      "interfaces": [
+        {
+          "protocol": "mcp",
+          "transport": "stdio"
+        },
+        {
+          "protocol": "plugin-package",
+          "targets": [
+            "openai",
+            "claude-code",
+            "github-copilot",
+            "gemini",
+            "generic-mcp"
+          ]
+        }
+      ],
+      "path": "../plugins/portfolio-governance"
+    },
+    {
+      "id": "urn:agentic-plugin:rootcause-response:0.2.0",
+      "type": "plugin",
+      "name": "RootCause Response",
+      "description": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+      "version": "0.2.0",
+      "interfaces": [
+        {
+          "protocol": "mcp",
+          "transport": "stdio"
+        },
+        {
+          "protocol": "plugin-package",
+          "targets": [
+            "openai",
+            "claude-code",
+            "github-copilot",
+            "gemini",
+            "generic-mcp"
+          ]
+        }
+      ],
+      "path": "../plugins/rootcause-response"
+    }
+  ]
+}

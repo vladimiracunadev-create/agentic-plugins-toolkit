@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "agentic-plugins-hook --plugin rootcause-response --event SessionStart",
+            "statusMessage": "Cargando límites de RootCause Response"
+          }
+        ]
+      }
+    ]
+  }
+}

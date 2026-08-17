@@ -1,0 +1,10 @@
+{
+  "name": "product-evolution",
+  "version": "0.2.0",
+  "description": "Convierte productos parciales en incrementos priorizados, compatibles y verificables.",
+  "author": {
+    "name": "Vladimir Acuña"
+  },
+  "homepage": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT"
+}

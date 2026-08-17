@@ -1,0 +1,38 @@
+{
+  "name": "legacy-modernization",
+  "version": "0.2.0",
+  "description": "Planifica y ejecuta modernizaciones incrementales preservando contratos, continuidad y rollback.",
+  "author": {
+    "name": "Vladimir Acuña",
+    "url": "https://github.com/vladimiracunadev-create"
+  },
+  "repository": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "skills",
+    "mcp",
+    "plugin",
+    "legacy-modernization"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Legacy Modernization",
+    "shortDescription": "Planifica y ejecuta modernizaciones incrementales preservando contratos, continuidad y rollback.",
+    "longDescription": "Planifica y ejecuta modernizaciones incrementales preservando contratos, continuidad y rollback.",
+    "developerName": "Vladimir Acuña",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Plan",
+      "Write with approval"
+    ],
+    "defaultPrompt": [
+      "Diseña la migración incremental de PHP 5.4 a PHP 8.3.",
+      "Crea una estrategia Strangler con pruebas y rollback."
+    ],
+    "brandColor": "#6D5CE7"
+  }
+}

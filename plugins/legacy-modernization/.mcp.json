@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "legacy-modernization-control": {
+      "command": "agentic-plugins",
+      "args": [
+        "mcp",
+        "--plugin",
+        "legacy-modernization"
+      ]
+    }
+  }
+}

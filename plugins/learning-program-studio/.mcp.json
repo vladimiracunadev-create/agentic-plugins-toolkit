@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "learning-program-studio-control": {
+      "command": "agentic-plugins",
+      "args": [
+        "mcp",
+        "--plugin",
+        "learning-program-studio"
+      ]
+    }
+  }
+}

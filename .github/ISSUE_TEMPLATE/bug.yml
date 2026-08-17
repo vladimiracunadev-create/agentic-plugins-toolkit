@@ -1,0 +1,42 @@
+name: Bug
+description: Reporta un defecto reproducible sin datos sensibles
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Adjunta la salida de `agentic-plugins doctor`. **Sanea** cualquier ruta,
+        token o dato personal antes de pegarlo.
+  - type: input
+    id: plugin
+    attributes:
+      label: Plugin afectado
+      placeholder: repository-engineering
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Plataforma
+      options: [Linux, macOS, Windows, WSL, Docker]
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Versión de Python
+      placeholder: "3.12.4"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Comando exacto y salida sanitizada
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true

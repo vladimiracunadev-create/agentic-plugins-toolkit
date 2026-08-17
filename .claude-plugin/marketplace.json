@@ -1,0 +1,44 @@
+{
+  "name": "vladimir-agentic-plugins",
+  "owner": {
+    "name": "Vladimir Acuña"
+  },
+  "plugins": [
+    {
+      "name": "repository-engineering",
+      "source": "./plugins/repository-engineering",
+      "description": "Audita, evoluciona, documenta y prepara releases de repositorios con evidencia y aprobación humana.",
+      "version": "0.2.0"
+    },
+    {
+      "name": "legacy-modernization",
+      "source": "./plugins/legacy-modernization",
+      "description": "Planifica y ejecuta modernizaciones incrementales preservando contratos, continuidad y rollback.",
+      "version": "0.2.0"
+    },
+    {
+      "name": "learning-program-studio",
+      "source": "./plugins/learning-program-studio",
+      "description": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones.",
+      "version": "0.2.0"
+    },
+    {
+      "name": "product-evolution",
+      "source": "./plugins/product-evolution",
+      "description": "Convierte productos parciales en incrementos priorizados, compatibles y verificables.",
+      "version": "0.2.0"
+    },
+    {
+      "name": "portfolio-governance",
+      "source": "./plugins/portfolio-governance",
+      "description": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidencia.",
+      "version": "0.2.0"
+    },
+    {
+      "name": "rootcause-response",
+      "source": "./plugins/rootcause-response",
+      "description": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+      "version": "0.2.0"
+    }
+  ]
+}

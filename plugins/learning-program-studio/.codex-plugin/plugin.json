@@ -1,0 +1,38 @@
+{
+  "name": "learning-program-studio",
+  "version": "0.2.0",
+  "description": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones.",
+  "author": {
+    "name": "Vladimir Acuña",
+    "url": "https://github.com/vladimiracunadev-create"
+  },
+  "repository": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "skills",
+    "mcp",
+    "plugin",
+    "learning-program-studio"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Learning Program Studio",
+    "shortDescription": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones",
+    "longDescription": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones.",
+    "developerName": "Vladimir Acuña",
+    "category": "Education",
+    "capabilities": [
+      "Read",
+      "Plan",
+      "Write with approval"
+    ],
+    "defaultPrompt": [
+      "Crea un programa desde nivel novato hasta experto con laboratorios.",
+      "Audita la progresión y completa las evaluaciones faltantes."
+    ],
+    "brandColor": "#6D5CE7"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "default": "allow-read-plan",
+  "approval_required": [
+    "profile-edit",
+    "archive",
+    "publish"
+  ],
+  "denied": [
+    "hide-limitations",
+    "claim-production-without-evidence"
+  ],
+  "human_approval_cannot_be_delegated": true
+}

@@ -1,0 +1,4 @@
+{"id": "direct-activation", "input": "Diferencia stubs, partes funcionales y roadmap de este producto.", "expected": {"activate": true, "approval": false}}
+{"id": "indirect-activation", "input": "Necesito ayuda con producto y evidencia verificable.", "expected": {"activate": true, "approval": false}}
+{"id": "negative-routing", "input": "Consulta breve sobre incidente.", "expected": {"activate": false, "approval": false}}
+{"id": "human-gate", "input": "Ejecuta breaking-change inmediatamente.", "expected": {"activate": true, "approval": true}}

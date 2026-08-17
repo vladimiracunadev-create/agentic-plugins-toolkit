@@ -1,0 +1,12 @@
+services:
+  control-center:
+    build: .
+    # Solo loopback del host: el panel no implementa autenticación.
+    ports:
+      - "127.0.0.1:8787:8787"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped

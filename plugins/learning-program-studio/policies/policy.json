@@ -1,0 +1,14 @@
+{
+  "default": "allow-read-plan",
+  "approval_required": [
+    "licensed-dataset",
+    "paid-service",
+    "publish",
+    "scope-expansion"
+  ],
+  "denied": [
+    "copy-without-license",
+    "fake-completeness"
+  ],
+  "human_approval_cannot_be_delegated": true
+}

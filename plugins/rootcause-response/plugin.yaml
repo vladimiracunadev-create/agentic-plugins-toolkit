@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "id": "rootcause-response",
+  "name": "RootCause Response",
+  "version": "0.2.0",
+  "status": "IMPLEMENTED",
+  "icon": "🩺",
+  "category": "Security",
+  "risk": "high",
+  "description": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+  "mission": "Reducir incertidumbre, preservar evidencia y remediar sin introducir un segundo incidente.",
+  "source": {
+    "agents_repository": "operational-ai-agents",
+    "agents_snapshot_version": "0.1.0",
+    "skills_repository": "claude-skills-toolkit",
+    "skills_mode": "optional-versioned-dependencies"
+  },
+  "components": {
+    "agents": [
+      "incident-root-cause-agent",
+      "security-remediation-agent"
+    ],
+    "skills": [
+      "rootcause-response-workflow"
+    ],
+    "optional_skills": [
+      "docker-compose-doctor",
+      "pre-push-guard",
+      "python-deps-pinning",
+      "repo-coherence-audit",
+      "security-audit",
+      "yaml-control"
+    ],
+    "mcp_servers": [
+      "rootcause-response-control"
+    ],
+    "hooks": [
+      "SessionStart"
+    ],
+    "custom_ui": false
+  },
+  "targets": [
+    {
+      "id": "openai",
+      "support": "native-package"
+    },
+    {
+      "id": "claude-code",
+      "support": "native-package"
+    },
+    {
+      "id": "github-copilot",
+      "support": "generated-agent-profiles"
+    },
+    {
+      "id": "gemini",
+      "support": "generated-instructions"
+    },
+    {
+      "id": "generic-mcp",
+      "support": "stdio"
+    }
+  ],
+  "policy": {
+    "default": "allow-read-plan",
+    "approval_required": [
+      "production-command",
+      "service-restart",
+      "configuration-change",
+      "credential",
+      "deploy"
+    ],
+    "denied": [
+      "destroy-evidence",
+      "exploit-third-party",
+      "bypass-approval"
+    ],
+    "human_approval_cannot_be_delegated": true
+  },
+  "activation": {
+    "keywords": [
+      "incidente",
+      "root cause",
+      "causa raíz",
+      "vulnerabilidad",
+      "seguridad",
+      "remediación",
+      "falla"
+    ],
+    "negative_keywords": [
+      "curso",
+      "portafolio",
+      "clima"
+    ]
+  },
+  "examples": [
+    "Construye la línea temporal y prueba hipótesis para este incidente.",
+    "Prioriza remediaciones sin ejecutar cambios productivos."
+  ],
+  "maturity": {
+    "declared": "IMPLEMENTED",
+    "claim": "Paquete, contratos, validación y evaluaciones disponibles.",
+    "not_claimed": [
+      "OPERATIONAL_LOCAL",
+      "INTEGRATED",
+      "PRODUCTION_OBSERVED"
+    ]
+  }
+}

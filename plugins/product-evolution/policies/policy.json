@@ -1,0 +1,14 @@
+{
+  "default": "allow-read-plan",
+  "approval_required": [
+    "breaking-change",
+    "external-integration",
+    "release",
+    "scope-expansion"
+  ],
+  "denied": [
+    "misrepresent-status",
+    "bypass-approval"
+  ],
+  "human_approval_cannot_be_delegated": true
+}

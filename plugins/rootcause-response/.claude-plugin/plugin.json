@@ -1,0 +1,10 @@
+{
+  "name": "rootcause-response",
+  "version": "0.2.0",
+  "description": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+  "author": {
+    "name": "Vladimir Acuña"
+  },
+  "homepage": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT"
+}

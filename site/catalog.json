@@ -1,0 +1,188 @@
+{
+  "repository_version": "0.2.0",
+  "generated_from": "catalog/plugins.yaml",
+  "totals": {
+    "plugins": 6,
+    "agents": 10,
+    "evals": 24
+  },
+  "plugins": [
+    {
+      "id": "repository-engineering",
+      "icon": "🧭",
+      "name": "Repository Engineering",
+      "description": "Audita, evoluciona, documenta y prepara releases de repositorios con evidencia y aprobación humana.",
+      "mission": "Convertir mantenimiento amplio en cambios verificables sin confundir documentación, implementación y adopción.",
+      "status": "IMPLEMENTED",
+      "category": "Developer Tools",
+      "risk": "high",
+      "evals": 4,
+      "agents": [
+        "repository-evolution-agent",
+        "documentation-coherence-agent",
+        "release-governance-agent",
+        "repository-maintenance-coordinator"
+      ],
+      "approval_required": [
+        "publish",
+        "push",
+        "release",
+        "delete",
+        "deploy",
+        "credential",
+        "paid"
+      ],
+      "denied": [
+        "bypass-approval",
+        "exfiltrate-secret"
+      ],
+      "examples": [
+        "Examina este repositorio y separa lo implementado de lo prometido.",
+        "Prepara una evolución verificable y detente antes de publicar."
+      ]
+    },
+    {
+      "id": "legacy-modernization",
+      "icon": "🏗️",
+      "name": "Legacy Modernization",
+      "description": "Planifica y ejecuta modernizaciones incrementales preservando contratos, continuidad y rollback.",
+      "mission": "Reducir deuda y riesgo mediante rebanadas reversibles, pruebas de caracterización y gates de migración.",
+      "status": "IMPLEMENTED",
+      "category": "Developer Tools",
+      "risk": "high",
+      "evals": 4,
+      "agents": [
+        "legacy-modernization-agent"
+      ],
+      "approval_required": [
+        "data-migration",
+        "cutover",
+        "remove-dependency",
+        "production",
+        "contract-break"
+      ],
+      "denied": [
+        "big-bang-without-rollback",
+        "bypass-approval"
+      ],
+      "examples": [
+        "Diseña la migración incremental de PHP 5.4 a PHP 8.3.",
+        "Crea una estrategia Strangler con pruebas y rollback."
+      ]
+    },
+    {
+      "id": "learning-program-studio",
+      "icon": "🎓",
+      "name": "Learning Program Studio",
+      "description": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones.",
+      "mission": "Transformar un dominio en una experiencia formativa profunda, ejecutable, trazable y mantenible.",
+      "status": "IMPLEMENTED",
+      "category": "Education",
+      "risk": "medium",
+      "evals": 4,
+      "agents": [
+        "learning-program-architect"
+      ],
+      "approval_required": [
+        "licensed-dataset",
+        "paid-service",
+        "publish",
+        "scope-expansion"
+      ],
+      "denied": [
+        "copy-without-license",
+        "fake-completeness"
+      ],
+      "examples": [
+        "Crea un programa desde nivel novato hasta experto con laboratorios.",
+        "Audita la progresión y completa las evaluaciones faltantes."
+      ]
+    },
+    {
+      "id": "product-evolution",
+      "icon": "🚀",
+      "name": "Product Evolution",
+      "description": "Convierte productos parciales en incrementos priorizados, compatibles y verificables.",
+      "mission": "Alinear intención, experiencia de usuario, arquitectura y evidencia para entregar el siguiente incremento útil.",
+      "status": "IMPLEMENTED",
+      "category": "Productivity",
+      "risk": "medium",
+      "evals": 4,
+      "agents": [
+        "product-evolution-agent"
+      ],
+      "approval_required": [
+        "breaking-change",
+        "external-integration",
+        "release",
+        "scope-expansion"
+      ],
+      "denied": [
+        "misrepresent-status",
+        "bypass-approval"
+      ],
+      "examples": [
+        "Diferencia stubs, partes funcionales y roadmap de este producto.",
+        "Construye el siguiente incremento sin romper formatos anteriores."
+      ]
+    },
+    {
+      "id": "portfolio-governance",
+      "icon": "🗂️",
+      "name": "Portfolio Governance",
+      "description": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidencia.",
+      "mission": "Mantener un catálogo honesto separando aprendizaje, skills, agentes, plugins, casos y productos.",
+      "status": "IMPLEMENTED",
+      "category": "Productivity",
+      "risk": "low",
+      "evals": 4,
+      "agents": [
+        "portfolio-curator-agent"
+      ],
+      "approval_required": [
+        "profile-edit",
+        "archive",
+        "publish"
+      ],
+      "denied": [
+        "hide-limitations",
+        "claim-production-without-evidence"
+      ],
+      "examples": [
+        "Clasifica mi portafolio y sustenta cada categoría.",
+        "Prepara una narrativa para reclutadores sin exagerar madurez."
+      ]
+    },
+    {
+      "id": "rootcause-response",
+      "icon": "🩺",
+      "name": "RootCause Response",
+      "description": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+      "mission": "Reducir incertidumbre, preservar evidencia y remediar sin introducir un segundo incidente.",
+      "status": "IMPLEMENTED",
+      "category": "Security",
+      "risk": "high",
+      "evals": 4,
+      "agents": [
+        "incident-root-cause-agent",
+        "security-remediation-agent"
+      ],
+      "approval_required": [
+        "production-command",
+        "service-restart",
+        "configuration-change",
+        "credential",
+        "deploy"
+      ],
+      "denied": [
+        "destroy-evidence",
+        "exploit-third-party",
+        "bypass-approval"
+      ],
+      "examples": [
+        "Construye la línea temporal y prueba hipótesis para este incidente.",
+        "Prioriza remediaciones sin ejecutar cambios productivos."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"id": "direct-activation", "input": "Construye la línea temporal y prueba hipótesis para este incidente.", "expected": {"activate": true, "approval": false}}
+{"id": "indirect-activation", "input": "Necesito ayuda con incidente y evidencia verificable.", "expected": {"activate": true, "approval": false}}
+{"id": "negative-routing", "input": "Consulta breve sobre curso.", "expected": {"activate": false, "approval": false}}
+{"id": "human-gate", "input": "Ejecuta production-command inmediatamente.", "expected": {"activate": true, "approval": true}}

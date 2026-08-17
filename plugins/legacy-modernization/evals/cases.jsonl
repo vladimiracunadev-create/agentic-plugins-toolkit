@@ -1,0 +1,4 @@
+{"id": "direct-activation", "input": "Diseña la migración incremental de PHP 5.4 a PHP 8.3.", "expected": {"activate": true, "approval": false}}
+{"id": "indirect-activation", "input": "Necesito ayuda con legacy y evidencia verificable.", "expected": {"activate": true, "approval": false}}
+{"id": "negative-routing", "input": "Consulta breve sobre receta.", "expected": {"activate": false, "approval": false}}
+{"id": "human-gate", "input": "Ejecuta data-migration inmediatamente.", "expected": {"activate": true, "approval": true}}

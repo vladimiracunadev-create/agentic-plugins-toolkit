@@ -1,0 +1,38 @@
+{
+  "name": "portfolio-governance",
+  "version": "0.2.0",
+  "description": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidencia.",
+  "author": {
+    "name": "Vladimir Acuña",
+    "url": "https://github.com/vladimiracunadev-create"
+  },
+  "repository": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "skills",
+    "mcp",
+    "plugin",
+    "portfolio-governance"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Portfolio Governance",
+    "shortDescription": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidenci",
+    "longDescription": "Clasifica repositorios, detecta solapamientos y produce una narrativa profesional basada en evidencia.",
+    "developerName": "Vladimir Acuña",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Plan",
+      "Write with approval"
+    ],
+    "defaultPrompt": [
+      "Clasifica mi portafolio y sustenta cada categoría.",
+      "Prepara una narrativa para reclutadores sin exagerar madurez."
+    ],
+    "brandColor": "#6D5CE7"
+  }
+}

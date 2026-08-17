@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "id": "learning-program-studio",
+  "name": "Learning Program Studio",
+  "version": "0.2.0",
+  "status": "IMPLEMENTED",
+  "icon": "🎓",
+  "category": "Education",
+  "risk": "medium",
+  "description": "Diseña programas educativos evolutivos con currículo, clases, laboratorios, evaluaciones y capstones.",
+  "mission": "Transformar un dominio en una experiencia formativa profunda, ejecutable, trazable y mantenible.",
+  "source": {
+    "agents_repository": "operational-ai-agents",
+    "agents_snapshot_version": "0.1.0",
+    "skills_repository": "claude-skills-toolkit",
+    "skills_mode": "optional-versioned-dependencies"
+  },
+  "components": {
+    "agents": [
+      "learning-program-architect"
+    ],
+    "skills": [
+      "learning-program-studio-workflow"
+    ],
+    "optional_skills": [
+      "md-lint-fix",
+      "md-to-doc",
+      "repo-coherence-audit",
+      "yaml-control"
+    ],
+    "mcp_servers": [
+      "learning-program-studio-control"
+    ],
+    "hooks": [
+      "SessionStart"
+    ],
+    "custom_ui": false
+  },
+  "targets": [
+    {
+      "id": "openai",
+      "support": "native-package"
+    },
+    {
+      "id": "claude-code",
+      "support": "native-package"
+    },
+    {
+      "id": "github-copilot",
+      "support": "generated-agent-profiles"
+    },
+    {
+      "id": "gemini",
+      "support": "generated-instructions"
+    },
+    {
+      "id": "generic-mcp",
+      "support": "stdio"
+    }
+  ],
+  "policy": {
+    "default": "allow-read-plan",
+    "approval_required": [
+      "licensed-dataset",
+      "paid-service",
+      "publish",
+      "scope-expansion"
+    ],
+    "denied": [
+      "copy-without-license",
+      "fake-completeness"
+    ],
+    "human_approval_cannot_be_delegated": true
+  },
+  "activation": {
+    "keywords": [
+      "curso",
+      "programa",
+      "aprendizaje",
+      "clases",
+      "laboratorio",
+      "evaluación",
+      "capstone"
+    ],
+    "negative_keywords": [
+      "incidente",
+      "despliegue",
+      "clima"
+    ]
+  },
+  "examples": [
+    "Crea un programa desde nivel novato hasta experto con laboratorios.",
+    "Audita la progresión y completa las evaluaciones faltantes."
+  ],
+  "maturity": {
+    "declared": "IMPLEMENTED",
+    "claim": "Paquete, contratos, validación y evaluaciones disponibles.",
+    "not_claimed": [
+      "OPERATIONAL_LOCAL",
+      "INTEGRATED",
+      "PRODUCTION_OBSERVED"
+    ]
+  }
+}

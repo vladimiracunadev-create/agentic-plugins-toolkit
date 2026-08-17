@@ -1,0 +1,38 @@
+{
+  "name": "rootcause-response",
+  "version": "0.2.0",
+  "description": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+  "author": {
+    "name": "Vladimir Acuña",
+    "url": "https://github.com/vladimiracunadev-create"
+  },
+  "repository": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "skills",
+    "mcp",
+    "plugin",
+    "rootcause-response"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "RootCause Response",
+    "shortDescription": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+    "longDescription": "Investiga incidentes y convierte hallazgos técnicos o de seguridad en remediaciones verificables.",
+    "developerName": "Vladimir Acuña",
+    "category": "Security",
+    "capabilities": [
+      "Read",
+      "Plan",
+      "Write with approval"
+    ],
+    "defaultPrompt": [
+      "Construye la línea temporal y prueba hipótesis para este incidente.",
+      "Prioriza remediaciones sin ejecutar cambios productivos."
+    ],
+    "brandColor": "#6D5CE7"
+  }
+}

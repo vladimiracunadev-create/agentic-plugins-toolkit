@@ -1,0 +1,98 @@
+{
+  "name": "vladimir-agentic-plugins",
+  "interface": {
+    "displayName": "Vladimir Agentic Plugins"
+  },
+  "plugins": [
+    {
+      "name": "repository-engineering",
+      "source": {
+        "source": "local",
+        "path": "./plugins/repository-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools",
+      "interface": {
+        "displayName": "Repository Engineering"
+      }
+    },
+    {
+      "name": "legacy-modernization",
+      "source": {
+        "source": "local",
+        "path": "./plugins/legacy-modernization"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools",
+      "interface": {
+        "displayName": "Legacy Modernization"
+      }
+    },
+    {
+      "name": "learning-program-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/learning-program-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education",
+      "interface": {
+        "displayName": "Learning Program Studio"
+      }
+    },
+    {
+      "name": "product-evolution",
+      "source": {
+        "source": "local",
+        "path": "./plugins/product-evolution"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "interface": {
+        "displayName": "Product Evolution"
+      }
+    },
+    {
+      "name": "portfolio-governance",
+      "source": {
+        "source": "local",
+        "path": "./plugins/portfolio-governance"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "interface": {
+        "displayName": "Portfolio Governance"
+      }
+    },
+    {
+      "name": "rootcause-response",
+      "source": {
+        "source": "local",
+        "path": "./plugins/rootcause-response"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Security",
+      "interface": {
+        "displayName": "RootCause Response"
+      }
+    }
+  ]
+}

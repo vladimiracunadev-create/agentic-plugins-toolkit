@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "rootcause-response-control": {
+      "command": "agentic-plugins",
+      "args": [
+        "mcp",
+        "--plugin",
+        "rootcause-response"
+      ]
+    }
+  }
+}

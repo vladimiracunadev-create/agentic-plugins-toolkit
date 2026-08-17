@@ -1,0 +1,38 @@
+{
+  "name": "product-evolution",
+  "version": "0.2.0",
+  "description": "Convierte productos parciales en incrementos priorizados, compatibles y verificables.",
+  "author": {
+    "name": "Vladimir Acuña",
+    "url": "https://github.com/vladimiracunadev-create"
+  },
+  "repository": "https://github.com/vladimiracunadev-create/agentic-plugins-toolkit",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "skills",
+    "mcp",
+    "plugin",
+    "product-evolution"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Product Evolution",
+    "shortDescription": "Convierte productos parciales en incrementos priorizados, compatibles y verificables.",
+    "longDescription": "Convierte productos parciales en incrementos priorizados, compatibles y verificables.",
+    "developerName": "Vladimir Acuña",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Plan",
+      "Write with approval"
+    ],
+    "defaultPrompt": [
+      "Diferencia stubs, partes funcionales y roadmap de este producto.",
+      "Construye el siguiente incremento sin romper formatos anteriores."
+    ],
+    "brandColor": "#6D5CE7"
+  }
+}
